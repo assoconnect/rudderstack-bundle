@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="asc.rudderstack.error_handler.class">AssoConnect\RudderstackBundle\Util\ErrorHandler</parameter>
+        <parameter key="asc.rudderstack.provider.class">AssoConnect\RudderstackBundle\Util\RudderstackProvider</parameter>
+        <parameter key="asc.rudderstack.provider.factory.class">AssoConnect\RudderstackBundle\Util\RudderstackProviderFactory</parameter>
+        <parameter key="asc.rudderstack.event_listener.annotation_listener.class">AssoConnect\RudderstackBundle\EventListener\AnnotationListener</parameter>
+    </parameters>
+
+    <services>
+        <service id="asc.rudderstack.error_handler" class="%asc.rudderstack.error_handler.class%">
+            <argument type="service" id="logger" />
+            <tag name="monolog.logger" channel="rudderstack" />
+        </service>
+
+        <service id='rudderstack.analytics' class="%asc.rudderstack.provider.class%">
+            <argument>%asc.rudderstack_write_key%</argument>
+            <argument>%asc.rudderstack_env%</argument>
+            <argument>%asc.rudderstack_options%</argument>
+            <argument type="service" id="asc.rudderstack.error_handler" />
+        </service>
+
+        <service id='rudderstack.analytics.factory' class="%asc.rudderstack.provider.factory.class%">
+            <argument>%asc.rudderstack_sources%</argument>
+            <argument>%asc.rudderstack_env%</argument>
+            <argument>%asc.rudderstack_options%</argument>
+            <argument type="service" id="asc.rudderstack.error_handler" />
+        </service>
+
+        <service id="asc.rudderstack.annotation_listener" class="%asc.rudderstack.event_listener.annotation_listener.class%">
+            <argument type="service" id="annotation_reader" />
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="rudderstack.analytics"/>
+            <argument>%asc.rudderstack_guest_id%</argument>
+            <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController"/>
+        </service>
+
+    </services>
+
+
+</container>
