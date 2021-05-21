@@ -1,0 +1,5 @@
+bin
+vendor
+Tests/app/cache
+composer.lock
+.idea/
