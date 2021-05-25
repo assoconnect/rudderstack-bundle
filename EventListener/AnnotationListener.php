@@ -1,12 +1,11 @@
 <?php
 
-namespace Assoconnect\Rudderstack\EventListener;
+namespace AssoConnect\RudderstackBundle\EventListener;
 
 use AssoConnect\RudderstackBundle\Util\RudderstackProvider;
 use Doctrine\Common\Annotations\Reader;
 use AssoConnect\RudderstackBundle\Configuration\Page;
 use AssoConnect\RudderstackBundle\Configuration\Track;
-use AssoConnect\RudderstackBundle\Util\SegmentIoProvider;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 

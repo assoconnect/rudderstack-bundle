@@ -5,15 +5,6 @@ namespace AssoConnect\RudderstackBundle\Configuration;
 use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Annotations\Annotation\Required;
 
-/**
- * Annotation Page
- *
- * @author Vladislav Marin <vladislav.marin92@gmail.com>
- *
- * @Annotation
- *
- * @Target("METHOD")
- */
 class Page implements AnalyticsInterface
 {
 
