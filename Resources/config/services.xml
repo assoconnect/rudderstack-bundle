@@ -38,6 +38,8 @@
             <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController"/>
         </service>
 
+        <service id="AssoConnect\RudderstackBundle\Util\RudderstackProvider" alias="rudderstack.analytics"/>
+
     </services>
 
 
