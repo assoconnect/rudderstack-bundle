@@ -9,7 +9,6 @@
     "doctrine",
     "symfony"
   ],
-  "version" : "1.0.1",
   "homepage": "http://github.com/assoconnect/RudderstackBundle",
   "license": "MIT",
   "authors": [],
