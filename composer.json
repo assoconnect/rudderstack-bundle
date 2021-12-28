@@ -9,13 +9,12 @@
     "doctrine",
     "symfony"
   ],
-  "version" : "1.0.1",
   "homepage": "http://github.com/assoconnect/RudderstackBundle",
   "license": "MIT",
   "authors": [],
   "require": {
     "php": "^7.4",
-    "rudderstack/rudder-php-sdk": "^1.0",
+    "rudderstack/rudder-php-sdk": "^1.0.0",
     "psr/log": "^1.0",
     "symfony/config": ">= 2.7",
     "symfony/dependency-injection": ">= 2.7",
