@@ -27,7 +27,11 @@ class RudderstackProvider
      */
     public function track(array $message)
     {
-        return $this->process('track', $message);
+        $processed = $this->process('track', $message);
+        if (true === $processed) {
+            $this->flush();
+        }
+        return $processed;
     }
 
     /**
