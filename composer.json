@@ -13,7 +13,7 @@
   "license": "MIT",
   "authors": [],
   "require": {
-    "php": "^7.4",
+    "php": "^7.4|^8.0",
     "rudderstack/rudder-php-sdk": "1.0.0",
     "psr/log": "^1.0",
     "symfony/config": ">= 2.7",
