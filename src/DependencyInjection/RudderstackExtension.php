@@ -10,12 +10,12 @@ use Symfony\Component\DependencyInjection\Loader;
 class RudderstackExtension extends Extension
 {
     /**
-     * @param array            $configs
+     * @param mixed[]          $configs
      * @param ContainerBuilder $container
      *
      * @throws \Exception
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
@@ -24,7 +24,7 @@ class RudderstackExtension extends Extension
         $loader->load('services.xml');
 
         $container->setParameter('asc.rudderstack_write_key', $config['write_key']);
-        $container->setParameter('asc.rudderstack_sources', $config['sources']??[]);
+        $container->setParameter('asc.rudderstack_sources', $config['sources'] ?? []);
         $container->setParameter('asc.rudderstack_guest_id', $config['guest_id']);
         $container->setParameter('asc.rudderstack_env', $config['env']);
         $container->setParameter('asc.rudderstack_options', $config['options']);

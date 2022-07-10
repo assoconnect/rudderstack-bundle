@@ -1,5 +1,8 @@
 # Rudderstack Bundle
 
+[![Build Status](https://github.com/assoconnect/rudderstack-bundle/actions/workflows/build.yml/badge.svg)](https://github.com/assoconnect/rudderstack-bundle/actions/workflows/build.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=assoconnect_rudderstack-bundle&metric=alert_status)](https://sonarcloud.io/dashboard?id=assoconnect_rudderstack-bundle)
+
 Bundle include Rudderstack library for analytics
 
 include [rudderlabs/rudder-php-sdk](https://github.com/rudderlabs/rudder-php-sdk)

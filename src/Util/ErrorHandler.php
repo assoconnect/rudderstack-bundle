@@ -28,7 +28,7 @@ class ErrorHandler
      * @param string|int $code
      * @param string     $msg
      */
-    public function __invoke($code, $msg)
+    public function __invoke($code, string $msg): void
     {
         $this->logger->error(sprintf('Rudderstack error %s : %s', $code, $msg));
     }

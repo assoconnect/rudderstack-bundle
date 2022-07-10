@@ -1,5 +1,5 @@
-bin
-vendor
-Tests/app/cache
+/vendor/*
+.phpunit.result.cache
+.idea
+.php_cs.cache
 composer.lock
-.idea/
