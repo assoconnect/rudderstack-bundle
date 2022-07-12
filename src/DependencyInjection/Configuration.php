@@ -7,13 +7,12 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
-
     /**
      * @return TreeBuilder
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('rudderstack');
+        $treeBuilder = new TreeBuilder();
 
         if (method_exists($treeBuilder, 'getRootNode')) {
             $rootNode = $treeBuilder->getRootNode();
